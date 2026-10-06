@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Audiodescrição na Escola — Curso de Extensão | CE/UFRN</title>
+<meta name="description" content="Curso de extensão híbrido de 20h sobre audiodescrição aplicada ao contexto escolar. Início em 30 de setembro, no Centro de Educação da UFRN. Para professores do Ensino Fundamental, do AEE e estagiários da Educação Especial.">
+<meta name="author" content="CE/UFRN · SIA/UFRN · TECincluir · LATECE">
+<meta name="theme-color" content="#0f172a">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Audiodescrição na Escola — quando as palavras tornam a imagem acessível">
+<meta property="og:description" content="Curso de extensão híbrido de 20h. Início em 30/09. Encontros presenciais no CE/UFRN e remotos pelo Google Meet. Para professores do Ensino Fundamental, do AEE e estagiários da Educação Especial.">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#0f172a;
+    --ink-2:#1e293b;
+    --muted:#64748b;
+    --muted-2:#94a3b8;
+    --line:#e9e3d5;
+    --line-2:#d8cfb8;
+    --bg:#faf8f3;
+    --bg-2:#f2ecdd;
+    --paper:#ffffff;
+    --accent:#c2410c;
+    --accent-2:#ea580c;
+    --accent-soft:#fff1e4;
+    --brand:#0f766e;
+    --brand-soft:#d4f3ec;
+    --gold:#a16207;
+    --gold-soft:#fef6d9;
+    --shadow-sm:0 1px 2px rgba(15,23,42,.06),0 1px 3px rgba(15,23,42,.05);
+    --shadow-md:0 4px 14px rgba(15,23,42,.06),0 14px 36px rgba(15,23,42,.06);
+    --shadow-lg:0 14px 44px rgba(15,23,42,.10),0 28px 80px rgba(15,23,42,.08);
+    --radius-sm:10px;
+    --radius:16px;
+    --radius-lg:24px;
+    --radius-xl:34px;
+    --max:1180px;
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+    font-size:16.5px;
+    line-height:1.65;
+    color:var(--ink);
+    background:var(--bg);
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;height:auto;}
+  a{color:inherit;text-decoration:none;}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+  h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;font-weight:600;line-height:1.12;color:var(--ink);margin:0;letter-spacing:-.015em;}
+  h1{font-size:clamp(2.1rem,5.6vw,3.75rem);font-weight:700;letter-spacing:-.025em;}
+  h2{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:600;}
+  h3{font-size:clamp(1.15rem,2vw,1.4rem);font-weight:600;}
+  p{margin:0 0 1em;}
+  ::selection{background:var(--accent);color:#fff;}
+
+  :focus-visible{outline:3px solid var(--brand);outline-offset:3px;border-radius:4px;}
+
+  .skip-link{
+    position:absolute;left:-9999px;top:8px;z-index:999;
+    background:var(--ink);color:#fff;padding:12px 18px;border-radius:8px;
+    font-weight:600;font-size:.95rem;
+  }
+  .skip-link:focus{left:12px;}
+
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 22px;}
+  @media(min-width:768px){.wrap{padding:0 32px;}}
+
+  /* ============ HEADER ============ */
+  .site-header{
+    position:sticky;top:0;z-index:80;
+    background:rgba(250,248,243,.88);
+    backdrop-filter:saturate(180%) blur(14px);
+    -webkit-backdrop-filter:saturate(180%) blur(14px);
+    border-bottom:1px solid transparent;
+    transition:border-color .3s ease, background .3s ease;
+  }
+  .site-header.scrolled{border-bottom-color:var(--line);}
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:16px;padding:14px 0;
+  }
+  .brand-mark{
+    display:flex;align-items:center;gap:12px;color:var(--ink);
+    font-family:'Fraunces',Georgia,serif;font-weight:700;
+    font-size:1.02rem;letter-spacing:-.015em;
+  }
+  .brand-mark .glyph{
+    width:34px;height:34px;border-radius:10px;flex:none;
+    background:linear-gradient(140deg,var(--ink) 0%, #334155 100%);
+    display:grid;place-items:center;color:#fbbf24;
+    box-shadow:0 6px 16px rgba(15,23,42,.22);
+  }
+  .brand-mark .glyph svg{width:18px;height:18px;}
+  .brand-mark small{
+    display:block;font-family:'Inter',sans-serif;font-weight:500;font-size:.72rem;
+    color:var(--muted);letter-spacing:0;line-height:1.2;margin-top:1px;
+  }
+
+  .nav-links{display:none;gap:26px;font-size:.9rem;font-weight:500;color:var(--muted);}
+  .nav-links a{transition:color .2s;position:relative;padding:4px 0;}
+  .nav-links a::after{
+    content:"";position:absolute;left:0;right:0;bottom:0;height:1.5px;
+    background:var(--accent);transform:scaleX(0);transform-origin:left;
+    transition:transform .3s ease;
+  }
+  .nav-links a:hover{color:var(--ink);}
+  .nav-links a:hover::after{transform:scaleX(1);}
+  @media(min-width:900px){.nav-links{display:flex;}}
+
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    padding:13px 22px;border-radius:999px;font-weight:600;font-size:.94rem;
+    letter-spacing:-.005em;transition:transform .18s ease, box-shadow .25s ease, background .2s ease, color .2s ease;
+    white-space:nowrap;line-height:1;
+  }
+  .btn:active{transform:translateY(1px);}
+  .btn-primary{
+    background:var(--ink);color:#fff;
+    box-shadow:0 8px 22px rgba(15,23,42,.22);
+  }
+  .btn-primary:hover{background:#1e293b;box-shadow:0 12px 30px rgba(15,23,42,.30);transform:translateY(-1px);}
+  .btn-accent{
+    background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;
+    box-shadow:0 10px 26px rgba(194,65,12,.32);
+  }
+  .btn-accent:hover{transform:translateY(-1px);box-shadow:0 14px 34px rgba(194,65,12,.42);}
+  .btn-ghost{
+    background:transparent;color:var(--ink);border:1.5px solid var(--line-2);
+  }
+  .btn-ghost:hover{background:#fff;border-color:var(--ink);}
+  .btn-sm{padding:10px 18px;font-size:.88rem;}
+  .btn svg{width:16px;height:16px;flex:none;}
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative;overflow:hidden;
+    padding:48px 0 44px;
+  }
+  .hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none;}
+  .hero-bg::before{
+    content:"";position:absolute;top:-140px;right:-120px;width:560px;height:560px;
+    background:radial-gradient(circle at center, rgba(194,65,12,.13), transparent 68%);
+    border-radius:50%;
+  }
+  .hero-bg::after{
+    content:"";position:absolute;bottom:-200px;left:-180px;width:600px;height:600px;
+    background:radial-gradient(circle at center, rgba(15,118,110,.10), transparent 68%);
+    border-radius:50%;
+  }
+  .hero-inner{position:relative;z-index:1;}
+  .hero-grid{
+    display:grid;gap:44px;
+    grid-template-columns:1fr;
+    align-items:start;
+  }
+  @media(min-width:980px){
+    .hero-grid{grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;}
+  }
+
+  .badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;}
+  .badge{
+    display:inline-flex;align-items:center;gap:7px;
+    font-size:.75rem;font-weight:600;letter-spacing:.03em;text-transform:uppercase;
+    padding:7px 13px;border-radius:999px;
+    background:var(--paper);border:1px solid var(--line);
+    color:var(--ink-2);
+  }
+  .badge.is-accent{background:var(--accent-soft);border-color:transparent;color:#9a3412;}
+  .badge.is-brand{background:var(--brand-soft);border-color:transparent;color:#0b5c56;}
+  .badge.is-gold{background:var(--gold-soft);border-color:transparent;color:#854d0e;}
+  .badge .pulse{
+    width:7px;height:7px;border-radius:50%;background:var(--accent);
+    box-shadow:0 0 0 4px rgba(194,65,12,.16);
+    animation:bpulse 2.2s ease-in-out infinite;
+  }
+  @keyframes bpulse{
+    0%,100%{box-shadow:0 0 0 4px rgba(194,65,12,.16);}
+    50%{box-shadow:0 0 0 7px rgba(194,65,12,.05);}
+  }
+
+  .hero h1{margin-bottom:20px;}
+  .hero h1 em{
+    font-style:italic;font-weight:500;
+    color:var(--accent);letter-spacing:-.02em;
+  }
+  .hero .lede{
+    font-size:clamp(1.02rem,1.5vw,1.16rem);color:var(--muted);
+    max-width:60ch;margin-bottom:28px;line-height:1.65;
+  }
+
+  .hero-facts{
+    display:flex;flex-wrap:wrap;gap:12px 24px;margin-bottom:32px;
+  }
+  .hero-fact{
+    display:flex;align-items:center;gap:9px;font-size:.92rem;color:var(--ink-2);font-weight:500;
+  }
+  .hero-fact svg{width:17px;height:17px;color:var(--accent);flex:none;}
+
+  .hero-cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
+  .hero-cta .btn{padding:15px 26px;font-size:.98rem;}
+
+  /* Hero illustration card */
+  .hero-visual{
+    position:relative;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:var(--radius-lg);
+    padding:28px 26px 26px;
+    box-shadow:var(--shadow-lg);
+    overflow:hidden;
+  }
+  .hero-visual::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:4px;
+    background:linear-gradient(90deg,var(--accent),#f59e0b,var(--brand));
+  }
+  .hv-label{
+    font-family:'Inter',sans-serif;font-size:.72rem;font-weight:700;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+    margin-bottom:18px;display:flex;align-items:center;gap:8px;
+  }
+  .hv-label::before{content:"";width:18px;height:1.5px;background:var(--accent);}
+
+  .hv-frame{
+    position:relative;
+    aspect-ratio:5/3;
+    background:linear-gradient(135deg,#f8fafc 0%,#eef2f7 100%);
+    border-radius:14px;
+    overflow:hidden;
+    margin-bottom:20px;
+    display:grid;place-items:center;
+  }
+  .hv-frame svg{width:100%;height:100%;display:block;}
+  .hv-frame .tag{
+    position:absolute;top:12px;left:12px;
+    font-family:'Inter',sans-serif;font-size:.62rem;font-weight:700;
+    letter-spacing:.14em;text-transform:uppercase;
+    background:rgba(15,23,42,.85);color:#fbbf24;
+    padding:4px 9px;border-radius:999px;
+  }
+
+  .hv-transform{
+    display:flex;align-items:center;gap:14px;
+    padding:14px 0 18px;border-top:1px dashed var(--line-2);
+    border-bottom:1px dashed var(--line-2);
+  }
+  .hv-transform .arrow{
+    flex:none;width:34px;height:34px;border-radius:50%;
+    background:var(--accent-soft);color:var(--accent);
+    display:grid;place-items:center;
+  }
+  .hv-transform .arrow svg{width:16px;height:16px;}
+  .hv-transform .text{
+    font-family:'Fraunces',serif;font-size:1.02rem;font-weight:500;
+    color:var(--ink);line-height:1.35;font-style:italic;
+  }
+  .hv-transform .text strong{font-style:normal;font-weight:700;color:var(--accent);}
+
+  .hv-waves{
+    display:flex;align-items:flex-end;gap:3px;height:34px;margin-top:16px;
+  }
+  .hv-waves span{
+    display:block;width:4px;border-radius:2px;
+    background:linear-gradient(180deg,var(--accent),#fbbf24);
+    opacity:.85;
+  }
+  .hv-waves span:nth-child(1){height:20%;}
+  .hv-waves span:nth-child(2){height:45%;}
+  .hv-waves span:nth-child(3){height:70%;}
+  .hv-waves span:nth-child(4){height:100%;}
+  .hv-waves span:nth-child(5){height:60%;}
+  .hv-waves span:nth-child(6){height:85%;}
+  .hv-waves span:nth-child(7){height:40%;}
+  .hv-waves span:nth-child(8){height:75%;}
+  .hv-waves span:nth-child(9){height:55%;}
+  .hv-waves span:nth-child(10){height:30%;}
+  .hv-waves span:nth-child(11){height:65%;}
+  .hv-waves span:nth-child(12){height:90%;}
+  .hv-waves span:nth-child(13){height:50%;}
+  .hv-waves span:nth-child(14){height:25%;}
+
+  /* ============ INFO STRIP ============ */
+  .info-strip{
+    background:var(--ink);color:#fff;
+    padding:22px 0;
+  }
+  .info-strip .grid{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:18px 14px;
+  }
+  @media(min-width:768px){.info-strip .grid{grid-template-columns:repeat(4,1fr);}}
+  .info-strip .cell{display:flex;align-items:center;gap:12px;min-width:0;}
+  .info-strip .cell svg{width:20px;height:20px;color:#fbbf24;flex:none;}
+  .info-strip .cell .lbl{font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:#94a3b8;font-weight:700;display:block;line-height:1.2;}
+  .info-strip .cell .val{font-size:.95rem;font-weight:600;color:#fff;line-height:1.3;}
+
+  /* ============ SECTIONS ============ */
+  section.block{padding:76px 0;}
+  @media(min-width:900px){section.block{padding:100px 0;}}
+  section.block.alt{background:var(--paper);}
+  section.block.warm{background:var(--bg-2);}
+
+  .sec-head{max-width:66ch;margin-bottom:48px;}
+  .sec-head .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'Inter',sans-serif;font-size:.76rem;font-weight:700;
+    letter-spacing:.12em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:16px;
+  }
+  .sec-head .eyebrow::before{
+    content:"";width:26px;height:1.5px;background:var(--accent);border-radius:2px;
+  }
+  .sec-head h2{margin-bottom:16px;}
+  .sec-head p{color:var(--muted);font-size:1.05rem;margin:0;line-height:1.65;}
+
+  /* ============ CONTEXT ============ */
+  .context-grid{display:grid;gap:40px;grid-template-columns:1fr;}
+  @media(min-width:900px){.context-grid{grid-template-columns:1fr 1fr;gap:64px;align-items:center;}}
+  .context-copy p{color:var(--ink-2);font-size:1.05rem;line-height:1.75;}
+  .context-copy p:last-child{margin-bottom:0;}
+  .context-copy .drop{
+    float:left;font-family:'Fraunces',serif;font-size:4.4rem;line-height:.85;
+    font-weight:700;color:var(--accent);padding:6px 14px 0 0;
+  }
+
+  .context-quote{
+    margin-top:30px;padding:24px 28px;border-left:4px solid var(--accent);
+    background:var(--accent-soft);border-radius:0 14px 14px 0;
+    font-family:'Fraunces',serif;font-style:italic;font-weight:500;
+    font-size:1.12rem;color:#7c2d12;line-height:1.5;
+  }
+  .context-quote small{
+    display:block;margin-top:10px;font-family:'Inter',sans-serif;
+    font-style:normal;font-weight:600;font-size:.78rem;letter-spacing:.06em;
+    text-transform:uppercase;color:#9a3412;
+  }
+
+  .context-pillars{display:grid;gap:14px;}
+  .pillar{
+    background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px 24px;display:flex;gap:16px;align-items:flex-start;
+    transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+  .pillar:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);border-color:var(--line-2);}
+  .pillar .ico{
+    width:44px;height:44px;border-radius:12px;flex:none;display:grid;place-items:center;
+    background:var(--accent-soft);color:var(--accent);
+  }
+  .pillar:nth-child(2) .ico{background:var(--brand-soft);color:var(--brand);}
+  .pillar:nth-child(3) .ico{background:var(--gold-soft);color:var(--gold);}
+  .pillar .ico svg{width:21px;height:21px;}
+  .pillar h3{font-size:1.02rem;margin-bottom:5px;font-family:'Fraunces',serif;font-weight:600;letter-spacing:-.01em;}
+  .pillar p{font-size:.9rem;color:var(--muted);margin:0;line-height:1.55;}
+
+  /* ============ PILARES / BENEFITS ============ */
+  .ben-grid{display:grid;gap:20px;grid-template-columns:1fr;}
+  @media(min-width:700px){.ben-grid{grid-template-columns:1fr 1fr;}}
+  @media(min-width:1000px){.ben-grid{grid-template-columns:repeat(4,1fr);}}
+  .ben-card{
+    background:var(--paper);border:1px solid var(--line);
+    border-radius:var(--radius);padding:28px 24px;position:relative;
+    transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+  .ben-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--line-2);}
+  .ben-card .num{
+    font-family:'Fraunces',serif;font-weight:700;font-size:2rem;
+    color:var(--accent);line-height:1;margin-bottom:14px;
+    letter-spacing:-.03em;font-style:italic;
+  }
+  .ben-card h3{font-size:1.08rem;margin-bottom:10px;font-family:'Fraunces',serif;font-weight:600;}
+  .ben-card p{font-size:.9rem;color:var(--muted);margin:0;line-height:1.6;}
+
+  /* ============ AUDIENCE ============ */
+  .aud-grid{display:grid;gap:20px;grid-template-columns:1fr;}
+  @media(min-width:700px){.aud-grid{grid-template-columns:1fr 1fr;}}
+  @media(min-width:1020px){.aud-grid{grid-template-columns:repeat(3,1fr);}}
+  .aud-card{
+    background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+    padding:28px 24px;display:flex;flex-direction:column;gap:16px;
+    transition:transform .25s ease, box-shadow .25s ease;
+    position:relative;overflow:hidden;
+  }
+  .aud-card::after{
+    content:"";position:absolute;top:0;left:0;right:0;height:3px;
+    background:linear-gradient(90deg,var(--accent),transparent);
+    opacity:0;transition:opacity .3s;
+  }
+  .aud-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);}
+  .aud-card:hover::after{opacity:1;}
+  .aud-card:nth-child(2)::after{background:linear-gradient(90deg,var(--brand),transparent);}
+  .aud-card:nth-child(3)::after{background:linear-gradient(90deg,var(--gold),transparent);}
+  .aud-card .ico{
+    width:48px;height:48px;border-radius:13px;display:grid;place-items:center;
+    background:var(--accent-soft);color:var(--accent);
+  }
+  .aud-card:nth-child(2) .ico{background:var(--brand-soft);color:var(--brand);}
+  .aud-card:nth-child(3) .ico{background:var(--gold-soft);color:var(--gold);}
+  .aud-card .ico svg{width:23px;height:23px;}
+  .aud-card h3{font-size:1.06rem;font-family:'Fraunces',serif;font-weight:600;line-height:1.3;}
+  .aud-card p{font-size:.9rem;color:var(--muted);margin:0;line-height:1.55;}
+
+  /* ============ MODALIDADES ============ */
+  .mod-grid{display:grid;gap:22px;grid-template-columns:1fr;}
+  @media(min-width:820px){.mod-grid{grid-template-columns:1fr 1fr;gap:28px;}}
+  .mod-card{
+    background:var(--paper);border:1px solid var(--line);
+    border-radius:var(--radius-lg);padding:32px 28px;position:relative;
+    overflow:hidden;transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .mod-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);}
+  .mod-card.mod-remote{background:linear-gradient(180deg,#f5fbfa 0%,#ffffff 55%);border-color:#c6e6e0;}
+  .mod-head{
+    display:flex;align-items:center;gap:14px;margin-bottom:22px;
+    padding-bottom:20px;border-bottom:1px dashed var(--line-2);
+  }
+  .mod-head .ico{
+    width:50px;height:50px;border-radius:14px;flex:none;display:grid;place-items:center;
+    background:var(--accent-soft);color:var(--accent);
+  }
+  .mod-card.mod-remote .mod-head .ico{background:var(--brand-soft);color:var(--brand);}
+  .mod-head .ico svg{width:24px;height:24px;}
+  .mod-head .lbl{
+    font-family:'Inter',sans-serif;font-size:.7rem;font-weight:700;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:3px;
+  }
+  .mod-head h3{font-size:1.35rem;font-family:'Fraunces',serif;font-weight:600;}
+
+  .mod-list{display:grid;gap:14px;}
+  .mod-item{
+    display:flex;gap:12px;align-items:flex-start;
+    font-size:.95rem;color:var(--ink-2);line-height:1.55;
+  }
+  .mod-item svg{width:18px;height:18px;flex:none;color:var(--accent);margin-top:3px;}
+  .mod-card.mod-remote .mod-item svg{color:var(--brand);}
+  .mod-item strong{color:var(--ink);font-weight:600;}
+
+  .mod-note{
+    margin-top:24px;padding:16px 18px;border-radius:12px;
+    background:var(--bg-2);border:1px dashed var(--line-2);
+    font-size:.88rem;color:var(--ink-2);line-height:1.55;
+    display:flex;gap:12px;align-items:flex-start;
+  }
+  .mod-note svg{width:18px;height:18px;flex:none;color:var(--accent);margin-top:2px;}
+  .mod-card.mod-remote .mod-note svg{color:var(--brand);}
+  .mod-note p{margin:0;}
+
+  /* ============ INSTITUIÇÕES ============ */
+  .inst-grid{display:grid;gap:16px;grid-template-columns:1fr;}
+  @media(min-width:640px){.inst-grid{grid-template-columns:1fr 1fr;}}
+  @media(min-width:1000px){.inst-grid{grid-template-columns:repeat(3,1fr);}}
+  .inst-card{
+    background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;display:flex;gap:16px;align-items:flex-start;
+    transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+  .inst-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);border-color:var(--line-2);}
+  .inst-card .ico{
+    width:44px;height:44px;border-radius:12px;flex:none;display:grid;place-items:center;
+    background:var(--bg-2);color:var(--ink-2);
+  }
+  .inst-card .ico svg{width:21px;height:21px;}
+  .inst-card h3{
+    font-size:.98rem;font-family:'Inter',sans-serif;font-weight:700;
+    letter-spacing:-.01em;margin-bottom:6px;line-height:1.35;
+  }
+  .inst-card .role{
+    display:inline-block;font-family:'Inter',sans-serif;
+    font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:8px;
+  }
+  .inst-card p{font-size:.85rem;color:var(--muted);margin:0;line-height:1.55;}
+
+  /* ============ INFO PRÁTICAS ============ */
+  .info-grid{display:grid;gap:18px;grid-template-columns:1fr;}
+  @media(min-width:640px){.info-grid{grid-template-columns:1fr 1fr;}}
+  @media(min-width:1000px){.info-grid{grid-template-columns:repeat(3,1fr);}}
+  .info-card{
+    background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px;display:flex;flex-direction:column;gap:12px;
+    position:relative;overflow:hidden;
+  }
+  .info-card::before{
+    content:"";position:absolute;top:0;left:0;width:3px;height:38px;
+    background:var(--accent);border-radius:0 3px 3px 0;
+  }
+  .info-card:nth-child(2)::before{background:var(--brand);}
+  .info-card:nth-child(3)::before{background:var(--gold);}
+  .info-card:nth-child(4)::before{background:var(--accent);}
+  .info-card:nth-child(5)::before{background:var(--brand);}
+  .info-card:nth-child(6)::before{background:var(--gold);}
+  .info-card .lbl{
+    font-family:'Inter',sans-serif;font-size:.7rem;font-weight:700;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+    padding-left:14px;
+  }
+  .info-card .val{
+    font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;
+    color:var(--ink);line-height:1.3;letter-spacing:-.01em;padding-left:14px;
+  }
+  .info-card .sub{font-size:.86rem;color:var(--muted);margin:0;line-height:1.55;padding-left:14px;}
+
+  /* ============ FAQ ============ */
+  .faq-wrap{max-width:820px;margin:0 auto;}
+  .faq-item{
+    background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+    margin-bottom:12px;overflow:hidden;transition:border-color .25s, box-shadow .25s;
+  }
+  .faq-item[open]{border-color:var(--line-2);box-shadow:var(--shadow-sm);}
+  .faq-item summary{
+    list-style:none;cursor:pointer;padding:22px 26px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;color:var(--ink);
+    line-height:1.4;
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary .chev{
+    width:28px;height:28px;flex:none;border-radius:50%;background:var(--bg-2);
+    display:grid;place-items:center;transition:transform .3s ease, background .2s;
+  }
+  .faq-item summary .chev svg{width:14px;height:14px;color:var(--ink);}
+  .faq-item[open] summary .chev{transform:rotate(180deg);background:var(--accent-soft);}
+  .faq-item[open] summary .chev svg{color:var(--accent);}
+  .faq-body{padding:0 26px 24px;color:var(--muted);font-size:.96rem;line-height:1.7;}
+  .faq-body p:last-child{margin-bottom:0;}
+  .faq-body em{color:var(--muted-2);font-style:italic;}
+
+  /* ============ CTA FINAL ============ */
+  .cta-final{
+    position:relative;overflow:hidden;
+    background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);
+    color:#fff;border-radius:var(--radius-xl);
+    padding:64px 32px 60px;text-align:center;
+    box-shadow:var(--shadow-lg);
+  }
+  @media(min-width:768px){.cta-final{padding:80px 60px 76px;}}
+  .cta-final::before{
+    content:"";position:absolute;top:-100px;right:-100px;width:420px;height:420px;
+    background:radial-gradient(circle,rgba(194,65,12,.32),transparent 70%);
+    border-radius:50%;
+  }
+  .cta-final::after{
+    content:"";position:absolute;bottom:-160px;left:-140px;width:420px;height:420px;
+    background:radial-gradient(circle,rgba(15,118,110,.30),transparent 70%);
+    border-radius:50%;
+  }
+  .cta-final > *{position:relative;z-index:1;}
+  .cta-final .eyebrow{
+    display:inline-block;font-family:'Inter',sans-serif;font-size:.76rem;
+    font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    color:#fbbf24;margin-bottom:22px;
+  }
+  .cta-final h2{color:#fff;margin-bottom:18px;}
+  .cta-final p{color:#cbd5e1;font-size:1.06rem;max-width:62ch;margin:0 auto 34px;line-height:1.6;}
+  .cta-final .btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;}
+  .cta-final .btn-primary{background:#fbbf24;color:var(--ink);box-shadow:0 10px 26px rgba(251,191,36,.28);}
+  .cta-final .btn-primary:hover{background:#fcd34d;}
+  .cta-final .btn-ghost{color:#fff;border-color:rgba(255,255,255,.28);}
+  .cta-final .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:#fff;}
+
+  /* ============ FOOTER ============ */
+  footer.site-footer{
+    background:var(--bg-2);border-top:1px solid var(--line);
+    padding:56px 0 32px;
+  }
+  .footer-grid{
+    display:grid;gap:36px;grid-template-columns:1fr;
+    padding-bottom:34px;border-bottom:1px solid var(--line-2);
+  }
+  @media(min-width:800px){.footer-grid{grid-template-columns:1.5fr 1fr 1fr;}}
+  .footer-brand .brand-mark{margin-bottom:18px;}
+  .footer-brand p{font-size:.9rem;color:var(--muted);max-width:44ch;margin:0;line-height:1.65;}
+  .footer-col h4{
+    font-family:'Inter',sans-serif;font-size:.76rem;font-weight:700;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--ink);
+    margin-bottom:16px;
+  }
+  .footer-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;}
+  .footer-col li{font-size:.9rem;color:var(--muted);line-height:1.55;}
+  .footer-col a{transition:color .2s;}
+  .footer-col a:hover{color:var(--accent);}
+  .footer-bottom{
+    padding-top:24px;display:flex;flex-wrap:wrap;gap:12px;
+    align-items:center;justify-content:space-between;
+    font-size:.82rem;color:var(--muted-2);
+  }
+
+  /* ============ BACK TO TOP ============ */
+  .to-top{
+    position:fixed;right:22px;bottom:22px;z-index:70;
+    width:48px;height:48px;border-radius:50%;
+    background:var(--ink);color:#fff;display:grid;place-items:center;
+    box-shadow:0 8px 22px rgba(15,23,42,.30);
+    opacity:0;transform:translateY(14px) scale(.9);pointer-events:none;
+    transition:opacity .3s ease, transform .3s ease, background .2s;
+  }
+  .to-top.show{opacity:1;transform:translateY(0) scale(1);pointer-events:auto;}
+  .to-top:hover{background:var(--accent);}
+  .to-top svg{width:18px;height:18px;}
+
+  /* ============ REVEAL ============ */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1);}
+  .reveal.in{opacity:1;transform:none;}
+
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important;}
+    .reveal{opacity:1;transform:none;}
+  }
+
+  @media(max-width:520px){
+    .hero-visual{padding:22px;}
+    .info-strip .grid{grid-template-columns:1fr 1fr;}
+    .info-strip .cell .val{font-size:.86rem;}
+    .btn{padding:12px 18px;}
+    .hero-cta .btn{width:100%;}
+    .hero-cta{flex-direction:column;align-items:stretch;}
+    .faq-item summary{padding:18px 20px;font-size:.98rem;}
+    .faq-body{padding:0 20px 20px;}
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Pular para o conteúdo principal</a>
+
+<header class="site-header" id="top">
+  <div class="wrap">
+    <div class="header-inner">
+      <a href="#top" class="brand-mark" aria-label="Início — Curso Audiodescrição na Escola">
+        <span class="glyph" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10v4M7 6v12M11 3v18M15 8v8M19 11v2"/></svg>
+        </span>
+        <span>
+          Audiodescrição na Escola
+          <small>Curso de extensão · 20h</small>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#publico">Para quem é</a>
+        <a href="#modalidades">Modalidades</a>
+        <a href="#instituicoes">Instituições</a>
+        <a href="#faq">Dúvidas</a>
+      </nav>
+
+      <a href="#sobre" class="btn btn-primary btn-sm" data-cta="header" data-event="curso-audiodescricao-escola" data-action="conhecer">
+        Conhecer o curso
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="wrap hero-inner">
+      <div class="hero-grid">
+
+        <div>
+          <div class="badges">
+            <span class="badge is-accent">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 15 8l7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+              Curso de Extensão
+            </span>
+            <span class="badge is-brand">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 2 7l10 5 10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              Híbrido · 20 horas
+            </span>
+            <span class="badge is-gold">
+              <span class="pulse" aria-hidden="true"></span>
+              Início em 30 de setembro
+            </span>
+          </div>
+
+          <h1 id="hero-title">
+            Audiodescrição na escola: <em>quando as palavras tornam a imagem acessível</em>
+          </h1>
+
+          <p class="lede">
+            Formação de extensão voltada à audiodescrição aplicada ao contexto escolar — uma prática que transforma informações visuais em descrições acessíveis por meio das palavras, ampliando a inclusão e a acessibilidade no ambiente educacional.
+          </p>
+
+          <div class="hero-facts">
+            <span class="hero-fact">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+              Início em 30/09
+            </span>
+            <span class="hero-fact">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              20 horas
+            </span>
+            <span class="hero-fact">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              CE/UFRN · Natal/RN
+            </span>
+          </div>
+
+          <div class="hero-cta">
+            <a href="#sobre" class="btn btn-accent" data-cta="hero-primary" data-event="curso-audiodescricao-escola" data-action="conhecer-curso">
+              Conhecer o curso
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#modalidades" class="btn btn-ghost" data-cta="hero-secondary" data-event="curso-audiodescricao-escola" data-action="ver-modalidades">
+              Como funcionam os encontros
+            </a>
+          </div>
+        </div>
+
+        <!-- HERO VISUAL -->
+        <aside class="hero-visual reveal" aria-label="Representação visual do conceito de audiodescrição">
+          <div class="hv-label">O que é audiodescrição</div>
+
+          <div class="hv-frame" role="img" aria-label="Ilustração abstrata representando uma imagem sendo traduzida em palavras por meio da audiodescrição">
+            <span class="tag">Imagem</span>
+            <svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#fef3c7"/>
+                  <stop offset="1" stop-color="#fde68a"/>
+                </linearGradient>
+                <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#0f766e" stop-opacity="0.7"/>
+                  <stop offset="1" stop-color="#0f766e" stop-opacity="0.95"/>
+                </linearGradient>
+              </defs>
+              <rect width="300" height="180" fill="url(#sky)"/>
+              <circle cx="228" cy="52" r="22" fill="#fbbf24" opacity="0.9"/>
+              <path d="M0 138 Q 60 96 120 128 T 240 122 T 300 138 L 300 180 L 0 180 Z" fill="url(#hill)"/>
+              <path d="M0 158 Q 80 130 160 152 T 300 148 L 300 180 L 0 180 Z" fill="#0f766e" opacity="0.9"/>
+              <g fill="#1e293b" opacity="0.85">
+                <rect x="42" y="118" width="4" height="26"/>
+                <circle cx="44" cy="114" r="9" fill="#0f766e"/>
+              </g>
+              <g stroke="#1e293b" stroke-width="1.6" stroke-linecap="round" opacity="0.55">
+                <path d="M20 40 q 12 -6 24 0" fill="none"/>
+                <path d="M20 48 q 12 -6 24 0" fill="none"/>
+              </g>
+            </svg>
+          </div>
+
+          <div class="hv-transform">
+            <span class="arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+            </span>
+            <span class="text">
+              Da imagem às <strong>palavras</strong>: uma descrição que abre o mundo visual para quem não o vê.
+            </span>
+          </div>
+
+          <div class="hv-waves" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== INFO STRIP ===================== -->
+  <div class="info-strip" role="region" aria-label="Informações rápidas">
+    <div class="wrap">
+      <div class="grid">
+        <div class="cell">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          <div>
+            <span class="lbl">Início</span>
+            <span class="val">30 de setembro</span>
+          </div>
+        </div>
+        <div class="cell">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div>
+            <span class="lbl">Carga horária</span>
+            <span class="val">20 horas</span>
+          </div>
+        </div>
+        <div class="cell">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 2 7l10 5 10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <div>
+            <span class="lbl">Modalidade</span>
+            <span class="val">Híbrida</span>
+          </div>
+        </div>
+        <div class="cell">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg>
+          <div>
+            <span class="lbl">Promoção</span>
+            <span class="val">CE/UFRN</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== SOBRE / CONTEXTO ===================== -->
+  <section class="block" id="sobre" aria-labelledby="sobre-title">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Sobre o curso</span>
+        <h2 id="sobre-title">Transformar imagens em palavras — e o acesso em direito</h2>
+        <p>Um curso de extensão para quem entende que a acessibilidade se constrói no cotidiano da escola.</p>
+      </div>
+
+      <div class="context-grid">
+        <div class="context-copy reveal">
+          <p>
+            <span class="drop" aria-hidden="true">A</span>
+            audiodescrição é um recurso de acessibilidade que traduz informações visuais em descrições em palavras. Na escola, ela amplia as possibilidades de participação de estudantes com deficiência visual e outros públicos que se beneficiam desse recurso.
+          </p>
+          <p>
+            O curso <strong>“Audiodescrição na escola: quando as palavras tornam a imagem acessível”</strong> é uma formação de extensão de 20 horas, em modalidade híbrida, destinada a professores do Ensino Fundamental, professores do Atendimento Educacional Especializado (AEE) e estagiários que atuam na Educação Especial.
+          </p>
+          <p>
+            Ao longo dos encontros, os participantes são convidados a compreender a audiodescrição como prática pedagógica, refletindo sobre como imagens, ilustrações, gráficos e materiais visuais podem ser tornados acessíveis no ambiente educacional.
+          </p>
+          <blockquote class="context-quote">
+            “Quando as palavras tornam a imagem acessível.”
+            <small>Do título do curso</small>
+          </blockquote>
+        </div>
+
+        <div class="context-pillars reveal">
+          <div class="pillar">
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+            </span>
+            <div>
+              <h3>Do visual ao verbal</h3>
+              <p>Compreender como elementos visuais podem ser traduzidos em descrições que ampliam o acesso à informação.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </span>
+            <div>
+              <h3>Prática escolar</h3>
+              <p>Aplicar a audiodescrição ao contexto da sala de aula e dos materiais pedagógicos.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13A4 4 0 0 1 16 11"/></svg>
+            </span>
+            <div>
+              <h3>Educação inclusiva</h3>
+              <p>Refletir sobre práticas que garantem a participação de todos os estudantes no espaço escolar.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PILARES / BENEFÍCIOS ===================== -->
+  <section class="block alt" aria-labelledby="ben-title">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">O que você vai encontrar</span>
+        <h2 id="ben-title">Quatro eixos que organizam a formação</h2>
+        <p>A proposta do curso articula teoria, prática e reflexão sobre a audiodescrição no cotidiano escolar.</p>
+      </div>
+
+      <div class="ben-grid">
+        <article class="ben-card reveal">
+          <div class="num" aria-hidden="true">01</div>
+          <h3>Fundamentos da audiodescrição</h3>
+          <p>Compreensão do que é audiodescrição, seus princípios e sua relevância como recurso de acessibilidade comunicacional.</p>
+        </article>
+        <article class="ben-card reveal">
+          <div class="num" aria-hidden="true">02</div>
+          <h3>Audiodescrição na escola</h3>
+          <p>Aplicação da audiodescrição ao contexto escolar, considerando materiais didáticos, imagens e recursos visuais.</p>
+        </article>
+        <article class="ben-card reveal">
+          <div class="num" aria-hidden="true">03</div>
+          <h3>Práticas pedagógicas inclusivas</h3>
+          <p>Reflexão sobre como práticas inclusivas podem ampliar a participação de estudantes com deficiência visual.</p>
+        </article>
+        <article class="ben-card reveal">
+          <div class="num" aria-hidden="true">04</div>
+          <h3>Educação Especial e AEE</h3>
+          <p>Articulação entre a audiodescrição, o Atendimento Educacional Especializado e a Educação Especial.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PÚBLICO ===================== -->
+  <section class="block" id="publico" aria-labelledby="pub-title">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Para quem é</span>
+        <h2 id="pub-title">Um curso para quem atua na interface entre educação e acessibilidade</h2>
+        <p>Conforme o material de divulgação do curso, a formação é destinada aos seguintes públicos.</p>
+      </div>
+
+      <div class="aud-grid">
+        <article class="aud-card reveal">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </span>
+          <h3>Professores do Ensino Fundamental</h3>
+          <p>Docentes que atuam no Ensino Fundamental e desejam incorporar a audiodescrição às suas práticas pedagógicas.</p>
+        </article>
+
+        <article class="aud-card reveal">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </span>
+          <h3>Professores do AEE</h3>
+          <p>Profissionais do Atendimento Educacional Especializado que buscam ampliar recursos para a inclusão de estudantes.</p>
+        </article>
+
+        <article class="aud-card reveal">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          </span>
+          <h3>Estagiários da Educação Especial</h3>
+          <p>Estagiários que atuam na Educação Especial e estão em processo de formação para o trabalho com acessibilidade.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MODALIDADES ===================== -->
+  <section class="block warm" id="modalidades" aria-labelledby="mod-title">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Como funcionam os encontros</span>
+        <h2 id="mod-title">Formato híbrido: presencial e remoto</h2>
+        <p>O curso combina encontros presenciais no Centro de Educação da UFRN e encontros remotos pelo Google Meet.</p>
+      </div>
+
+      <div class="mod-grid">
+        <article class="mod-card reveal">
+          <div class="mod-head">
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg>
+            </span>
+            <div>
+              <span class="lbl">Modalidade</span>
+              <h3>Encontros presenciais</h3>
+            </div>
+          </div>
+
+          <div class="mod-list">
+            <div class="mod-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span><strong>Local:</strong> Centro de Educação da UFRN (CE/UFRN)</span>
+            </div>
+            <div class="mod-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              <span><strong>Horário:</strong> 8h30 às 11h30</span>
+            </div>
+            <div class="mod-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              <span><strong>Formato:</strong> atividades presenciais no espaço da universidade, com interação direta entre os participantes.</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="mod-card mod-remote reveal">
+          <div class="mod-head">
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </span>
+            <div>
+              <span class="lbl">Modalidade</span>
+              <h3>Encontros remotos</h3>
+            </div>
+          </div>
+
+          <div class="mod-list">
+            <div class="mod-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span><strong>Plataforma:</strong> Google Meet</span>
+            </div>
+            <div class="mod-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              <span><strong>Horário:</strong> 8h30 às 10h30</span>
+            </div>
+            <div class="mod-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              <span><strong>Formato:</strong> encontros online síncronos, permitindo a continuidade das discussões entre as atividades presenciais.</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="mod-note reveal" style="margin-top:28px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <p><strong>Início do curso:</strong> 30 de setembro. O detalhamento completo das datas de cada encontro deve ser consultado junto à organização responsável pelo curso.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== INSTITUIÇÕES ===================== -->
+  <section class="block" id="instituicoes" aria-labelledby="inst-title">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Instituições e setores envolvidos</span>
+        <h2 id="inst-title">Uma ação articulada entre universidade e rede pública</h2>
+        <p>O curso envolve diferentes instituições, setores e projetos ligados à acessibilidade e à educação inclusiva.</p>
+      </div>
+
+      <div class="inst-grid">
+        <article class="inst-card reveal">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </span>
+          <div>
+            <span class="role">Instituição</span>
+            <h3>CE/UFRN — Centro de Educação da UFRN</h3>
+            <p>Centro da Universidade Federal do Rio Grande do Norte que sedia os encontros presenciais do curso.</p>
+          </div>
+        </article>
+
+        <article class="inst-card reveal">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18"/></svg>
+          </span>
+          <div>
+            <span class="role">Setor</span>
+            <h3>SIA/UFRN</h3>
+            <p>Setor da Universidade Federal do Rio Grande do Norte envolvido na realização da formação.</p>
+          </div>
+        </article>
+
+        <article class="inst-card reveal">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M12 22v-6M2 12h6M22 12h-6M6 6l4 4M14 14l4 4M6 18l4-4M14 10l4-4"/></svg>
+          </span>
+          <div>
+            <span class="role">Projeto</span>
+            <h3>TECincluir</h3>
+            <p>Projeto vinculado às ações de tecnologia, acessibilidade e inclusão que integra a realização do curso.</p>
+          </div>
+        </article>
+
+        <article class="inst-card reveal">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          </span>
+          <div>
+            <span class="role">Laboratório</span>
+            <h3>LATECE — Laboratório de Tecnologia Assistiva</h3>
+            <p>Laboratório do Centro de Educação da UFRN dedicado à tecnologia assistiva e às práticas de acessibilidade.</p>
+          </div>
+        </article>
+
+        <article class="inst-card reveal">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg>
+          </span>
+          <div>
+            <span class="role">Parceria institucional</span>
+            <h3>Secretaria Municipal de Educação de Natal (SME/Natal)</h3>
+            <p>Identificada no material de divulgação pelo logotipo da Prefeitura do Natal, com identificação institucional adicional AScom/SME.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== INFORMAÇÕES PRÁTICAS ===================== -->
+  <section class="block alt" aria-labelledby="info-title">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Informações práticas</span>
+        <h2 id="info-title">O que você precisa saber antes de participar</h2>
+        <p>Resumo dos principais dados do curso, conforme o material de divulgação.</p>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-card reveal">
+          <span class="lbl">Tipo de atividade</span>
+          <span class="val">Curso de Extensão</span>
+          <p class="sub">Ação formativa vinculada a atividades de extensão universitária.</p>
+        </div>
+
+        <div class="info-card reveal">
+          <span class="lbl">Carga horária</span>
+          <span class="val">20 horas</span>
+          <p class="sub">Distribuídas entre encontros presenciais e remotos.</p>
+        </div>
+
+        <div class="info-card reveal">
+          <span class="lbl">Modalidade</span>
+          <span class="val">Híbrida</span>
+          <p class="sub">Combinação de encontros presenciais e remotos.</p>
+        </div>
+
+        <div class="info-card reveal">
+          <span class="lbl">Início do curso</span>
+          <span class="val">30 de setembro</span>
+          <p class="sub">Data de início conforme o material de divulgação.</p>
+        </div>
+
+        <div class="info-card reveal">
+          <span class="lbl">Encontros presenciais</span>
+          <span class="val">CE/UFRN</span>
+          <p class="sub">Das 8h30 às 11h30, no Centro de Educação da UFRN.</p>
+        </div>
+
+        <div class="info-card reveal">
+          <span class="lbl">Encontros remotos</span>
+          <span class="val">Google Meet</span>
+          <p class="sub">Das 8h30 às 10h30, por meio da plataforma Google Meet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FAQ ===================== -->
+  <section class="block" id="faq" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="sec-head reveal" style="text-align:center;margin-left:auto;margin-right:auto;">
+        <span class="eyebrow" style="justify-content:center;">Dúvidas frequentes</span>
+        <h2 id="faq-title">Perguntas sobre o curso</h2>
+        <p>Reunimos as principais informações divulgadas sobre a formação.</p>
+      </div>
+
+      <div class="faq-wrap">
+        <details class="faq-item reveal">
+          <summary>
+            O que é audiodescrição?
+            <span class="chev" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <div class="faq-body">
+            <p>A audiodescrição é um recurso de acessibilidade que traduz informações visuais em descrições em palavras, ampliando o acesso de pessoas com deficiência visual — e de outros públicos que se beneficiam desse recurso — a conteúdos imagéticos, como ilustrações, gráficos, cenas e materiais visuais.</p>
+          </div>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary>
+            Quem pode participar do curso?
+            <span class="chev" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <div class="faq-body">
+            <p>Conforme o material de divulgação, o curso é destinado a professores do Ensino Fundamental, professores do Atendimento Educacional Especializado (AEE) e estagiários que atuam na Educação Especial.</p>
+          </div>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary>
+            Qual é a carga horária e a modalidade?
+            <span class="chev" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <div class="faq-body">
+            <p>O curso tem <strong>20 horas</strong> de carga horária e é realizado em <strong>modalidade híbrida</strong>, combinando encontros presenciais e remotos.</p>
+          </div>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary>
+            Quando o curso começa?
+            <span class="chev" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <div class="faq-body">
+            <p>O início do curso está previsto para <strong>30 de setembro</strong>. As datas dos demais encontros devem ser consultadas junto à organização.</p>
+          </div>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary>
+            Onde acontecem os encontros presenciais?
+            <span class="chev" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <div class="faq-body">
+            <p>Os encontros presenciais acontecem no <strong>Centro de Educação da UFRN (CE/UFRN)</strong>, das 8h30 às 11h30.</p>
+          </div>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary>
+            Como funcionam os encontros remotos?
+            <span class="chev" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <div class="faq-body">
+            <p>Os encontros remotos acontecem pela plataforma <strong>Google Meet</strong>, das 8h30 às 10h30.</p>
+          </div>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary>
+            Como faço minha inscrição?
+            <span class="chev" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <div class="faq-body">
+            <p>As informações sobre inscrição devem ser consultadas diretamente com a organização do curso, por meio dos canais oficiais das instituições envolvidas. <em>[Informação a confirmar junto à organização.]</em></p>
+          </div>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary>
+            Quais instituições estão envolvidas no curso?
+            <span class="chev" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <div class="faq-body">
+            <p>O curso envolve o <strong>CE/UFRN</strong>, o <strong>SIA/UFRN</strong>, o <strong>TECincluir</strong> e o <strong>LATECE</strong>. O material também apresenta participação institucional da <strong>Secretaria Municipal de Educação de Natal (SME/Natal)</strong>, com identificação AScom/SME.</p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA FINAL ===================== -->
+  <section class="block" id="inscricao" aria-labelledby="cta-title" style="padding-top:0;">
+    <div class="wrap">
+      <div class="cta-final reveal">
+        <span class="eyebrow">Audiodescrição na escola</span>
+        <h2 id="cta-title">Palavras que abrem o mundo visual da escola</h2>
+        <p>Um curso de extensão para profissionais e estudantes que desejam ampliar o repertório de acessibilidade e inclusão em suas práticas educacionais.</p>
+
+        <div class="btns">
+          <a href="#sobre" class="btn btn-primary" data-cta="final-primary" data-event="curso-audiodescricao-escola" data-action="conhecer-curso">
+            Conhecer o curso
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#modalidades" class="btn btn-ghost" data-cta="final-secondary" data-event="curso-audiodescricao-escola" data-action="ver-modalidades">
+            Ver como funciona
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer" aria-label="Rodapé">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#top" class="brand-mark" aria-label="Voltar ao topo">
+          <span class="glyph" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10v4M7 6v12M11 3v18M15 8v8M19 11v2"/></svg>
+          </span>
+          <span>
+            Audiodescrição na Escola
+            <small>Curso de extensão · 20h</small>
+          </span>
+        </a>
+        <p>Curso de Extensão “Audiodescrição na escola: quando as palavras tornam a imagem acessível”. Formação híbrida de 20 horas, com início em 30 de setembro.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Realização e envolvimento</h4>
+        <ul>
+          <li>CE/UFRN — Centro de Educação da UFRN</li>
+          <li>SIA/UFRN</li>
+          <li>TECincluir</li>
+          <li>LATECE — Laboratório de Tecnologia Assistiva</li>
+          <li>Participação institucional: SME/Natal</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#sobre">Sobre o curso</a></li>
+          <li><a href="#publico">Para quem é</a></li>
+          <li><a href="#modalidades">Modalidades</a></li>
+          <li><a href="#instituicoes">Instituições</a></li>
+          <li><a href="#faq">Dúvidas frequentes</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>Curso de Extensão · Audiodescrição na Escola</span>
+      <span>CE/UFRN · Natal/RN</span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Voltar ao topo da página" type="button">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+(function(){
+  'use strict';
+
+  /* ---------- Header scroll state ---------- */
+  var header = document.querySelector('.site-header');
+  var toTop = document.getElementById('toTop');
+
+  function onScroll(){
+    var y = window.scrollY || window.pageYOffset;
+    if (header) header.classList.toggle('scrolled', y > 8);
+    if (toTop) toTop.classList.toggle('show', y > 560);
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* ---------- Back to top ---------- */
+  if (toTop){
+    toTop.addEventListener('click', function(){
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({top:0, behavior: reduce ? 'auto' : 'smooth'});
+    });
+  }
+
+  /* ---------- Reveal on scroll ---------- */
+  var reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting){
+          en.target.classList.add('in');
+          io.unobserve(en.target);
+        }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+    reveals.forEach(function(el){ io.observe(el); });
+  } else {
+    reveals.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* ---------- Smooth anchor scroll with header offset ---------- */
+  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href');
+      if (id === '#' || id.length < 2) return;
+      var el = document.querySelector(id);
+      if (!el) return;
+      e.preventDefault();
+      var y = el.getBoundingClientRect().top + window.pageYOffset - 70;
+      window.scrollTo({top:y, behavior: prefersReduced ? 'auto' : 'smooth'});
+      history.replaceState(null, '', id);
+    });
+  });
+
+})();
+</script>
+</body>
+</html>
